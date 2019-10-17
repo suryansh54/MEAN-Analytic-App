@@ -1,0 +1,34 @@
+{
+  "name": "apis",
+  "version": "1.0.0",
+  "description": "Authentication APIs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin/dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/suryansh54/analytics-app.git"
+  },
+  "keywords": [
+    "Data",
+    "visualisation",
+    "Session",
+    "based",
+    "authentication"
+  ],
+  "author": "Suryansh Srivastava",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suryansh54/analytics-app/issues"
+  },
+  "homepage": "https://github.com/suryansh54/analytics-app#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^1.19.4"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
