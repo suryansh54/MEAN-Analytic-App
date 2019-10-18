@@ -1,4 +1,4 @@
-# analytics-app
+# Data visualization app
 
 3 Page application With login module and authentication
 
