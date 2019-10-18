@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const port = process.env.PORT || 4000;
 const dbConnect = process.env.DATABASE_CONNECT;
+const chartRoutes = require('../routes/charts');
 
 // Import auth routes
 const authRoute = require('./../routes/auth');
@@ -19,8 +20,9 @@ app.use(express.json());
 
 // Route Middleware
 app.use('/api/user', authRoute);
+app.use('/api/charts', chartRoutes);
 
-app.get('/test', (req, res)=>{
+app.get('/port', (req, res)=>{
     res.json(
         {
             port:port

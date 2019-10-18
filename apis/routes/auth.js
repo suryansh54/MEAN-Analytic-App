@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const User = require('./../model/user')
+const User = require('./../model/user');
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const { registerUserValidation, loginUserValidation } = require('./../validation');
 
@@ -46,8 +47,47 @@ router.post('/register', async (req, res) => {
 });
 
 // User Login Route
-router.post('/login', (req, res) => {
-    res.send("login");
+router.post('/login', async (req, res) => {
+    // Validating the data is exist or not
+    const { error } = loginUserValidation(req.body);
+    if(error) {
+        return res.status(400).json(
+            {
+                type: 'error',
+                message: error.details[0].message
+            }
+        )
+    } else {
+        // Checking the email exists or not
+        const user = await User.findOne({ email: req.body.email });
+        if(!user) {
+            return res.status(400).json(
+                {
+                    type: 'error',
+                    message: 'Email is not found'
+                }
+            ) 
+        } else {
+            // Password is correct or not
+            const validPassword = await bcrypt.compare(req.body.password, user.password);
+            if(!validPassword) {
+                return res.status(400).json(
+                    {
+                        type: 'error',
+                        message: 'Invalid Password'
+                    }
+                ) 
+            } else {
+                // Creating JWT tokens if user exists
+                const token = jwt.sign( {_id: user._id}, process.env.TOKEN_SECRET );
+                res.header('auth-token', token).json(
+                    {
+                        token: token
+                    }
+                );
+            }
+        }
+    }
 });
 
 
