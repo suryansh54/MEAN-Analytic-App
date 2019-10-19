@@ -7,6 +7,10 @@ const { registerUserValidation, loginUserValidation } = require('./../validation
 // User Registration Route
 router.post('/register', async (req, res) => {
     // Validating user before user creation
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type, Authorization');
+    res.header('Access-Control-Allow-Credentials', true);
     const { error } = registerUserValidation(req.body);
     if (error) {
         return res.status(400).json(

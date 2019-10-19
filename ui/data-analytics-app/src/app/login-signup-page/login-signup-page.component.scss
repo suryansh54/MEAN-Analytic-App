@@ -1,0 +1,73 @@
+.form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+
+  .logo {
+    font-size: 25px;
+    font-weight: 100;
+    padding: 10px 20px;
+    background: #232323;
+    display: inline-block;
+    color: #fff;
+    user-select: none;
+    margin-bottom: 30px;
+    float: right;
+}
+
+.logo i {
+    margin-right: 20px;
+}
+
+h1 {
+  font-weight: 100;
+}
+
+.sign-up, .login {
+  padding:200px 60px 20px;
+}
+
+.button-wrapper {
+  text-align: right;
+}
+
+.button-wrapper button {
+  font-size: 16px;
+}
+
+.custom-container-fluid {
+  height: 100vh;
+}
+
+.custom-row {
+  overflow: hidden;
+}
+
+.custom-col {
+  width: 50%;
+  float: left;
+  height: 100vh;
+}
+
+.sign-up {
+  background: #f9f9f9;
+  height: 100%;
+}
+
+.custom-login-signup {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+mat-progress-bar {
+  z-index: 9;
+  position: relative;
+}

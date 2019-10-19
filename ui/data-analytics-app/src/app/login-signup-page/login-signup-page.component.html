@@ -1,1 +1,46 @@
-<p>login-signup-page works!</p>
+<mat-progress-bar mode="indeterminate" *ngIf="loader"></mat-progress-bar>
+<div class="custom-login-signup">
+    <div class="custom-container-fluid">
+        <div class="custom-row">
+            <div class="custom-col">
+                <div class="sign-up">
+                    <h1>Sign Up</h1>
+                    <form class="form" [formGroup]="signUpForm">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Name" required autocomplete="off"  formControlName="name">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Email" required autocomplete="off"  formControlName="email">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Password" type="password" required autocomplete="off"  formControlName="password">
+                        </mat-form-field>
+                        <div class="button-wrapper">
+                            <button mat-raised-button color="primary" (click)="signup()" [disabled]="!signUpForm.valid">Sign up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="custom-col">
+                <div class="logo">
+                    <i class="fas fa-chart-area"></i>
+                    <span>Data visualization app</span>
+                </div>
+                <div class="login">
+                    <h1>Login</h1>
+                    <form class="form" [formGroup]="loginForm">
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Email" required autocomplete="off"  formControlName="email">
+                        </mat-form-field>
+                        <mat-form-field class="full-width">
+                            <input matInput placeholder="Password" type="password" required autocomplete="off"  formControlName="password">
+                        </mat-form-field>
+                        <div class="button-wrapper">
+                            <button mat-raised-button color="primary" (click)="login()" [disabled]="!loginForm.valid">Login</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

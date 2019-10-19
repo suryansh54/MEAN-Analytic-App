@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 // Components
 import { AppComponent } from './app.component';
@@ -32,6 +33,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
 
 // Service
 import { AuthServiceService } from './auth-service.service';
@@ -52,6 +54,7 @@ import { ChartsServiceService } from './charts-service.service';
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatSidenavModule,
     MatMenuModule,
     MatTabsModule,
@@ -67,7 +70,9 @@ import { ChartsServiceService } from './charts-service.service';
     MatTooltipModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     AuthServiceService,

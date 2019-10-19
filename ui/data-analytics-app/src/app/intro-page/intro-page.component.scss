@@ -1,0 +1,44 @@
+.custom-intro-page-wrapper {
+    height: 100vh;
+    width: 100vw;
+    background: #232323;
+    padding: 100px;
+    text-align: center;
+    color: #fff;
+}
+
+.custom-intro-icon {
+    font-size: 200px;
+}
+
+.custom-intro-icon i {
+    display: block;
+}
+
+.custom-intro-text h2 {
+    font-weight: 100;
+    font-size: 35px;
+    margin: 0;
+    padding: 20px 0 40px;
+}
+
+.custom-intro-action button {
+    margin:  0 20px;
+}
+
+.footer-bg {
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    transform: translateY(5px);
+    position: fixed;
+  }
+
+.footer-bg svg {
+    width: 100%;
+    height: auto;
+    z-index: 0;
+    position: relative;
+}
