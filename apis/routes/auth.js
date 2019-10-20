@@ -52,6 +52,11 @@ router.post('/register', async (req, res) => {
 
 // User Login Route
 router.post('/login', async (req, res) => {
+    // Validating user before user creation
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type, Authorization');
+    res.header('Access-Control-Allow-Credentials', true);
     // Validating the data is exist or not
     const { error } = loginUserValidation(req.body);
     if(error) {
@@ -86,7 +91,9 @@ router.post('/login', async (req, res) => {
                 const token = jwt.sign( {_id: user._id}, process.env.TOKEN_SECRET );
                 res.header('auth-token', token).json(
                     {
-                        token: token
+                        token: token,
+                        userName: user.name,
+                        userEmail: user.email
                     }
                 );
             }

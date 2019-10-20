@@ -26,6 +26,14 @@
 
 h1 {
   font-weight: 100;
+  margin-bottom: 0;
+}
+
+.sub-heading {
+  margin-top: 0;
+  font-weight: 100;
+  font-size: 12px;
+  color: #868686;
 }
 
 .sign-up, .login {
@@ -34,6 +42,7 @@ h1 {
 
 .button-wrapper {
   text-align: right;
+  margin-top: 10px;
 }
 
 .button-wrapper button {
@@ -69,5 +78,18 @@ h1 {
 
 mat-progress-bar {
   z-index: 9;
-  position: relative;
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%
+}
+
+.back-to-intro {
+  display: block;
+  position: fixed;
+  text-decoration: none;
+  font-weight: 600;
+  color: #333;
+  right: 20px;
+  bottom: 20px;
 }

@@ -1,1 +1,44 @@
-<router-outlet></router-outlet>
+<div class="header-container-wrapper" *ngIf="header">
+    <div class="header-container">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-6">
+                    <div class="custom-logo">
+                        <i class="fas fa-chart-area"></i>
+                        <span>Data visualization app</span>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="user-option">
+                        <ul>
+                            <li><a routerLink="/chart-one"><i class="fas fa-home"></i></a></li>
+                            <li><a routerLink="/chart-one" class="user-name">{{ userName }}</a></li>
+                            <li><a (click)="logout()">Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="body-container-wrapper">
+    <div class="body-container">
+            <div class="custom-sidebar" *ngIf="header">
+                <ul class="custom-menu">
+                    <li><a routerLink="/chart-one" routerLinkActive="active"><i class="fas fa-chart-pie"></i>Chart one</a></li>
+                    <li><a routerLink="/chart-two" routerLinkActive="active"><i class="far fa-chart-bar"></i>Chart two</a></li>
+                    <li><a routerLink="/chart-three" routerLinkActive="active"><i class="fas fa-chart-line"></i>Chart three</a></li>
+                </ul>
+                <div class="info">
+                    <div>Version: 1.0.0</div>
+                    <div>@All right reserved</div>
+                </div>
+            </div>
+            <div class="content-body" [class.full-width]="header == false">
+                <div class="body-wrapper">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+    </div>
+</div>
+

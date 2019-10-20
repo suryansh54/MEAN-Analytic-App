@@ -34,10 +34,11 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import {MatCardModule} from '@angular/material/card';
 
 // Service
-import { AuthServiceService } from './auth-service.service';
-import { ChartsServiceService } from './charts-service.service';
+import { AuthServiceService } from './services/auth-service.service';
+import { ChartsServiceService } from './services/charts-service.service';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { ChartsServiceService } from './charts-service.service';
     MatSortModule,
     MatPaginatorModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ],
   providers: [
     AuthServiceService,
