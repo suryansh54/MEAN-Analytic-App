@@ -40,6 +40,7 @@ import {MatCardModule} from '@angular/material/card';
 // Service
 import { AuthServiceService } from './services/auth-service.service';
 import { ChartsServiceService } from './services/charts-service.service';
+import { MessageAndLoaderServiceService } from './services/message-and-loader-service.service';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { ChartsServiceService } from './services/charts-service.service';
   ],
   providers: [
     AuthServiceService,
-    ChartsServiceService
+    ChartsServiceService,
+    MessageAndLoaderServiceService
   ],
   bootstrap: [AppComponent]
 })

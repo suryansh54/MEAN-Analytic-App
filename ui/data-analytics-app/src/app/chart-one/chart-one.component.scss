@@ -1,7 +1,8 @@
 .custom-chart-body {
     padding: 20px;
     background: #f9f9f9;
-    height: 100%;
+    height: calc(100vh - 55px);
+    overflow: auto;
 }
 
 .custom-charts-wrapper {
@@ -30,4 +31,58 @@
 }
 .file-to-btn input[type="file"]{
     display: none;
+}
+
+
+.upload-file-list ul li {
+    display: block;
+}
+
+.upload-file-list ul li a {
+    display: block;
+    padding: 9px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.upload-file-list ul li a i {
+    margin-right: 8px;
+}
+
+.upload-file-list ul {
+    height: 300px;
+    overflow: auto;
+    border: 1px solid #d8d8d8;
+    margin-top: 20px;
+    background: #fff;
+    position: relative;
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    display: block;
+}
+.uploads-top-header {
+    padding: 10px;
+    background: #d8d8d8;
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.uploads-top-header span:last-child {
+    float: right;
+}
+
+.no-uploadds-yet {
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+    margin: 10px;
+    background: #FFC107;
+}
+
+.note {
+    font-size: 12px;
+    font-weight: 600;
 }

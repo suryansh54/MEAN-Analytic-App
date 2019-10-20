@@ -13,7 +13,7 @@ let storage = multer.diskStorage({
       cb(null, DIR);
     },
     filename: (req, file, cb) => {
-      cb(null, file.fieldname + '-' + Date.now()  + path.extname(file.originalname));
+      cb(null, file.originalname);
     }
 });
 let upload = multer({storage: storage});
@@ -34,6 +34,7 @@ router.get('/upload', function (req, res) {
 });
  
 router.post('/upload',upload.single('fileData'), function (req, res) {
+  console.log(req.file.originalname);
     if (!req.file) {
         return res.json({
           error: 'error',

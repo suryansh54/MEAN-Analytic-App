@@ -1,6 +1,25 @@
 <div class="custom-chart-body">
-    <mat-card>
-        <h3>Chart Three</h3>
-        <p>User Graph</p>
-    </mat-card>
-</div>
+        <mat-card>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-4">
+                            <h3>Chart Three</h3>
+                            <p>Random (Getting response from api)</p>
+                            <div class="input-type-range">
+                                <label>Select data Count</label>
+                                <input type="number" min="0" max="{{maxRange}}" (change)="selectRange($event)">
+                                <label>Select data x-axis greater than 40</label>
+                                <input type="number" min="40" max="{{maxRange}}" (change)="selectRange($event)">
+                                <label>Select data y-axis greater than 2</label>
+                                <input type="number" min="40" max="{{maxRange}}" (change)="selectRange($event)">
+                            </div>
+                        </div>
+                        <div class="col-8">
+                            <div class="custom-charts-wrapper">
+                                <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </mat-card>
+    </div>

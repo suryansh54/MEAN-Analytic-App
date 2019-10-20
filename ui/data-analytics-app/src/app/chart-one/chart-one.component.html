@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-4">
-                    <h3>Chart One</h3>
+                    <h3>Chart One (Static Chart and File upload demo)</h3>
                     <mat-card class="file-upload-wrapper">
                         <div class="note">Upload json file to load charts</div>
                         <label class="file-to-btn"> Select File
@@ -15,6 +15,20 @@
                             Upload an Image
                         </button>
                         <span>{{percentage}} % Completed</span>
+                        <div class="upload-file-list">
+                            <div class="uploads-top-header">
+                                <span>Uploaded files</span>
+                                <span>Count: {{UploadedFileList.length}}</span>
+                            </div>
+                            <div class="no-uploadds-yet" *ngIf="UploadedFileList.length==0 else uploads">
+                                    No uploads yet
+                            </div>
+                            <ng-template #uploads>
+                                <ul>
+                                    <li *ngFor="let item of UploadedFileList"><a><i class="fas fa-file-alt"></i> {{item}}</a></li> 
+                                </ul>
+                            </ng-template>
+                        </div>
                     </mat-card>
                 </div>
                 <div class="col-8">

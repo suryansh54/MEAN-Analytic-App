@@ -5,7 +5,7 @@ const port = process.env.PORT || 4000;
 const dbConnect = process.env.DATABASE_CONNECT;
 const chartRoutes = require('../routes/charts');
 const upload = require('../routes/upload');
-
+const dummy = require('../routes/dummyData');
 
 // Import auth routes
 const authRoute = require('./../routes/auth');
@@ -24,5 +24,6 @@ app.use(express.json());
 app.use('/api/user', authRoute);
 app.use('/api/charts', chartRoutes);
 app.use('/api', upload);
+app.use('/api', dummy);
 
 app.listen(port, ()=> console.log(`Server is running in port ${port}`));
