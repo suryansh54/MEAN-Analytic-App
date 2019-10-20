@@ -35,4 +35,12 @@ export class AuthServiceService {
       return of({userName: sessionStorage.getItem('userName'), userEmail: sessionStorage.getItem('userEmail')});
     }
   }
+
+  userStatus(){
+    if(sessionStorage.getItem('token')){
+      return of(true);
+    } else {
+      return of(false);
+    }
+  }
 }

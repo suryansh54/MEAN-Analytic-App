@@ -1,15 +1,18 @@
-<div class="custom-intro-page-wrapper">
-    <div class="custom-intro-icon">
-        <i class="fas fa-chart-area"></i>
+<div [class.light]="styleChangeClass == 'light'">
+    <div class="custom-intro-page-wrapper">
+        <div class="custom-intro-icon">
+            <i class="fas fa-chart-area"></i>
+        </div>
+        <div class="custom-intro-text">
+            <h2>Data visualization app</h2>
+        </div>
+        <div class="custom-intro-action">
+            <button mat-button>About</button>
+            <button mat-button (click)="goToApp()" *ngIf="userStatus">Go to App</button>
+            <button mat-button (click)="goToLogin()" *ngIf="!userStatus">Login</button>
+        </div>
+        <div class="footer-bg">
+            <svg xmlns="http://www.w3.org/2000/svg" width="600" height="94" viewBox="0 0 600 94"><g fill="#4a4a4a" fill-rule="evenodd"><path d="M600 94V35.6C437.2 36.8 273 52.7 102.1 94H600z" opacity=".3"></path><path d="M600 84.6c-206.5-2-403.2-13.4-600-39.2V94h600v-9.4z"></path><path d="M0 .8V94h573.8C382.9 76.6 194.6 47.1 0 .8z" opacity=".7"></path></g></svg>
+        </div>
     </div>
-    <div class="custom-intro-text">
-        <h2>Data visualization app</h2>
-    </div>
-    <div class="custom-intro-action">
-        <button mat-button>About</button>
-        <button mat-button (click)="goToLogin()">Login</button>
-    </div>
-    <div class="footer-bg">
-		<svg xmlns="http://www.w3.org/2000/svg" width="600" height="94" viewBox="0 0 600 94"><g fill="#4a4a4a" fill-rule="evenodd"><path d="M600 94V35.6C437.2 36.8 273 52.7 102.1 94H600z" opacity=".3"></path><path d="M600 84.6c-206.5-2-403.2-13.4-600-39.2V94h600v-9.4z"></path><path d="M0 .8V94h573.8C382.9 76.6 194.6 47.1 0 .8z" opacity=".7"></path></g></svg>
-	</div>
 </div>

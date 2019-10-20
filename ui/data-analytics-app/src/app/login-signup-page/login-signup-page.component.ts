@@ -66,6 +66,11 @@ export class LoginSignupPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.auth.userStatus().subscribe((status)=>{
+      if(status) {
+        this.router.navigateByUrl('/chart-one');
+      }
+    });
   }
 
 }
