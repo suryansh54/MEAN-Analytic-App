@@ -14,6 +14,7 @@ import { ChartTwoComponent } from './chart-two/chart-two.component';
 import { ChartThreeComponent } from './chart-three/chart-three.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { IntroPageComponent } from './intro-page/intro-page.component';
+import { FileSelectDirective } from 'ng2-file-upload';
 
 
 // Material Module
@@ -48,7 +49,8 @@ import { ChartsServiceService } from './services/charts-service.service';
     ChartTwoComponent,
     ChartThreeComponent,
     PageNotFoundComponent,
-    IntroPageComponent
+    IntroPageComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,

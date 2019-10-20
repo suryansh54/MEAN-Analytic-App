@@ -1,9 +1,28 @@
 <div class="custom-chart-body">
     <mat-card>
-        <h3>Chart One</h3>
-        <p>Population Graph</p>
-        <div class="custom-charts-wrapper">
-            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-4">
+                    <h3>Chart One</h3>
+                    <mat-card class="file-upload-wrapper">
+                        <div class="note">Upload json file to load charts</div>
+                        <label class="file-to-btn"> Select File
+                            <input class="file-upload-input" type="file" multiple name="fileData" ng2FileSelect [uploader]="uploader" />
+                        </label> 
+                        <button class="upload-btn-click" type="button" mat-raised-button color="primary" 
+                        (click)="uploader.uploadAll()" 
+                        [disabled]="!uploader.getNotUploadedItems().length" >
+                            Upload an Image
+                        </button>
+                        <span>{{percentage}} % Completed</span>
+                    </mat-card>
+                </div>
+                <div class="col-8">
+                    <div class="custom-charts-wrapper">
+                        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </mat-card>
 </div>
