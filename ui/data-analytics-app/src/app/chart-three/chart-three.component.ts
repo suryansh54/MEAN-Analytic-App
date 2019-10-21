@@ -41,18 +41,28 @@ export class ChartThreeComponent implements OnInit {
     chart.render();
   }
 
-  chartThreeDynamicData(){
-    this.ChartDataService.chartThreeApi().subscribe((countryData: any)=>{
+  chartThreeDynamicData(dataCount :number, x?: number){
+    this.ChartDataService.chartThreeApi(dataCount, x).subscribe((countryData: any)=>{
       this.chartThree(countryData.data.dataPoints);
       this.maxRange = countryData.data.dataPoints.length;
     })
   }
-
-  selectRange(e: any){
-    console.log(e.target.value);
+  dataCountValue :number = 1000;
+  xValue :number = 0;
+  selectRange(e: any, valueType: any) {
+    if(this.dataCountValue > 50000 || this.xValue >200) {
+      this.messageNotification('Input value is not valid','Close',2000);
+    } else {
+      if(valueType == 'dataCount') {
+        this.chartThreeDynamicData(e.target.value, this.xValue);
+      } else if (valueType == 'x') {
+        console.log(this.dataCountValue);
+        this.chartThreeDynamicData(this.dataCountValue, e.target.value);
+      }
+    }
   }
   ngOnInit() {
-    this.chartThreeDynamicData();
+    this.chartThreeDynamicData(1000);
   }
 
 }

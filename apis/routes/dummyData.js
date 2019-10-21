@@ -9,7 +9,7 @@ function randomDataArray(dataCount = 100){
     for(var i=0; i < dataCount; i++){
         dataPoints.push(
             {
-                x: random(30, 80), y: random(1, 7), z: random(200, 1200) , name: "XYZ"
+                x: random(0, 200), y: random(1, 7), z: random(200, 1200) , name: "XYZ "+i
             }
         )
     }
@@ -26,11 +26,20 @@ router.get('/chart-two-data', (req, res) => {
 });
 
 
-router.get('/chart-three-data', (req, res) => {
+router.post('/chart-three-data', (req, res) => {
+    let dataCount = req.body.dataCount || 1000;
+    var dataPoints;
+    if(req.body.x){
+        dataPoints = randomDataArray(dataCount).filter((v)=>{
+            return v.x > req.body.x
+        });
+    } else {
+        dataPoints = randomDataArray(dataCount);
+    }
     res.json({
         data: {
             title: "Chart 3",
-            dataPoints: randomDataArray(1000)
+            dataPoints: dataPoints
         }
     });
 });

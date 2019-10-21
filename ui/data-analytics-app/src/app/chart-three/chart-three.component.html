@@ -6,12 +6,11 @@
                             <h3>Chart Three</h3>
                             <p>Random (Getting response from api)</p>
                             <div class="input-type-range">
-                                <label>Select data Count</label>
-                                <input type="number" min="0" max="{{maxRange}}" (change)="selectRange($event)">
-                                <label>Select data x-axis greater than 40</label>
-                                <input type="number" min="40" max="{{maxRange}}" (change)="selectRange($event)">
-                                <label>Select data y-axis greater than 2</label>
-                                <input type="number" min="40" max="{{maxRange}}" (change)="selectRange($event)">
+                                <label>Select data Count (No value = 1000) [Range 0 ~ 50000]</label>
+                                <input type="number" (change)="selectRange($event, 'dataCount')" value=1000 min=1000 max=50000 [(ngModel)]="dataCountValue">
+                                <label>Filter: Select data x-axis greater than given input (No value = 0) [Range 0 ~ 200]</label>
+                                <input type="number" (change)="selectRange($event, 'x')" [(ngModel)]="xValue" min=0 max=200>
+                                <b class="total-filter-data">Total filter data:  {{maxRange}}</b>
                             </div>
                         </div>
                         <div class="col-8">

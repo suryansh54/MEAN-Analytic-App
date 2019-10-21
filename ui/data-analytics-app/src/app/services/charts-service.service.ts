@@ -25,8 +25,14 @@ export class ChartsServiceService {
     return this.http.get(uploadFileListURL);
   }
 
-  chartThreeApi(){
+  chartThreeApi(dataCount:number, x?:number){
+    let postDataObj = {
+      dataCount:dataCount,
+      x:x
+    }
     let uploadFileListURL = environment.apiUrl + '/api/chart-three-data';
-    return this.http.get(uploadFileListURL);
+    return this.http.post(uploadFileListURL, postDataObj, {
+      headers: new HttpHeaders().set('Content-Type', 'application/json'),
+    });
   }
 }
